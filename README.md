@@ -52,3 +52,4 @@
 
     ssh <nama_server> 
     run /etc/passwd
+    
