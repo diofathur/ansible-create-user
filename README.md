@@ -50,6 +50,16 @@
 
 9. verify user
 
-    ssh <nama_server> 
-    run /etc/passwd
-    
+    RAND_NUMBER=$(python3 -c "import random; print(random.randrange(1,50))")
+    ssh pod-username-managed1 -l ops${RAND_NUMBER}     
+    ssh pod-username-managed1 -l dev${RAND_NUMBER}
+
+    RAND_NUMBER=$(python3 -c "import random; print(random.randrange(51,100))")
+    ssh pod-username-managed2 -l ops${RAND_NUMBER}    
+    ssh pod-username-managed2 -l dev${RAND_NUMBER} 
+
+10. Change inventory
+
+    vi inventory
+    change group name from 
+    [managed1_host_username] to [managed1-host-username]
